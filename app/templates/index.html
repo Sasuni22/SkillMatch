@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Hero Section -->
+<div class="hero p-5 rounded-4 shadow-sm mb-4" style="background-color: #dce8f9;">
+  <div class="row align-items-center">
+    <div class="col-md-7">
+      <h1 class="display-4 fw-bold">
+        Welcome to <span style="color: #ffc928;">SkillMatch</span>
+      </h1>
+      <p class="lead" style="color: black;">
+        Discover the best job opportunities tailored to your skills.
+        Upload your resume and get AI-powered job matches instantly!
+      </p>
+      {% if current_user.is_authenticated %}
+        <a href="{{ url_for('upload.upload_get') }}" 
+           class="btn btn-lg mt-3" 
+           style="background-color: #2b67ff; color: white; border-color: #98bdf6;">
+          Upload Resume
+        </a>
+      {% else %}
+        <a href="{{ url_for('auth.login') }}" 
+           class="btn btn-lg mt-3" 
+           style="background-color: #2b67ff; color: white; border-color: #98bdf6;">
+          Login to Upload Your CV
+        </a>
+      {% endif %}
+    </div>
+    <div class="col-md-5 d-none d-md-block">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=900&auto=format" 
+           class="img-fluid rounded" alt="career">
+    </div>
+  </div>
+</div>
+
+<!-- Featured Jobs -->
+<h3 class="text-white mb-3">Featured Jobs</h3>
+<div class="row g-3">
+  {% for job in jobs %}
+    <div class="col-md-4">
+      <div class="card hover-card p-3 h-100" style="background-color: #ffffff;">
+        <h5 style="color: rgb(2, 2, 2);">{{ job.title }}</h5>
+        <p class="small text-muted">{{ job.description|truncate(120) }}</p>
+        <a href="#" class="btn btn-primary btn-sm mt-2">View Details</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

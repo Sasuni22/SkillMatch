@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card p-4 shadow-sm hover-card mx-auto my-5" style="max-width: 600px;">
+  <h2 class="text-accent mb-3 text-center">Upload Your Resume</h2>
+  <p class="text-center">Drag & drop a PDF or click below to select your file.</p>
+
+  <div id="drop-area" class="p-4 rounded-3 border border-dashed mb-3">
+    <p class="mb-2 text-center"><i class="bi bi-cloud-arrow-up display-4 text-muted"></i></p>
+    <input id="fileElem" type="file" accept="application/pdf" hidden>
+    <div class="text-center mb-2">
+      <button id="fileSelect" class="btn btn-primary mb-2">Choose File</button>
+    </div>
+    <div id="file-name" class="small text-muted mb-2 text-center"></div>
+    <div id="progress" class="progress mt-2" style="height:12px; display:none;">
+      <div id="progress-bar" class="progress-bar" role="progressbar" style="width:0%"></div>
+    </div>
+    <div class="text-center">
+      <button id="uploadBtn" class="btn btn-success mt-3" disabled>Upload & Match</button>
+    </div>
+  </div>
+
+  <div id="results-placeholder" class="mt-4"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,135 @@
+:root {
+    --primary: #113974;      /* main blue */
+    --accent: #d6a615;       /* yellow accent */
+    --bg-dark: #344366;      /* dark background */
+    --bg-card: #1a2a5b;      /* card background */
+    --text-light: #ffffff;   /* primary text */
+    --text-muted: #c0c0c0;   /* muted text */
+}
+
+/* --- General layout --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-dark) !important;
+    color: var(--text-light);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+main.container {
+    flex: 1 0 auto;
+    padding: 2rem 1rem;
+    background-color: var(--bg-dark) !important;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--bg-dark) !important;
+    font-weight: 700;
+}
+.navbar .nav-link {
+    color: var(--text-light) !important;
+}
+.navbar .nav-link:hover {
+    color: var(--accent) !important;
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding: 4rem 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, rgba(17,57,116,0.95), rgba(102,16,242,0.9));
+    color: var(--text-light);
+}
+.text-accent {
+    color: var(--accent) !important;
+}
+
+/* --- Cards --- */
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background-color: var(--bg-card);
+    color: var(--text-light);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* --- Drop Area --- */
+#drop-area {
+    background: var(--bg-card);
+    border: 2px dashed var(--accent);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+#drop-area.bg-light, #drop-area:hover {
+    background: #223567;
+    border-color: var(--primary);
+}
+
+/* --- Progress Bar --- */
+.progress {
+    height: 12px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+.progress-bar {
+    background-color: var(--accent);
+    transition: width 1s ease-in-out;
+}
+
+/* --- Match Bars --- */
+.match-bar {
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: 6px;
+    transition: width 1s ease-in-out;
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    
+}
+.btn-primary:hover {
+    background-color: #0b2a6a;
+    border-color: #0b2a6a;
+}
+.btn-outline-light {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.btn-outline-light:hover {
+    background-color: var(--accent);
+    color: var(--bg-dark);
+}
+
+/* --- Text utilities --- */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* --- Misc Utility --- */
+.badge {
+    font-size: 0.85em;
+    padding: 0.45em 0.7em;
+}

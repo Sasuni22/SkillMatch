@@ -1,49 +1,26 @@
-🧠 SkillMatch — AI-Powered Job Matching Platform
+# SkillMatch — Complete Project
 
-> A smart web application that analyzes resumes and instantly finds the best matching jobs based on skills and experience.
+## Setup (Windows / macOS / Linux)
 
+1. Create virtualenv:
+   python -m venv venv
+   # Windows PowerShell:
+   .\venv\Scripts\Activate.ps1
+   # macOS / Linux:
+   source venv/bin/activate
 
+2. Install requirements:
+   pip install -r requirements.txt
 
-🚀 Overview
-SkillMatch is an intelligent job recommendation platform built with Python and Flask, designed to help users discover the most relevant career opportunities by analyzing their resumes.
+3. Download SentenceTransformer model will occur automatically on first run.
+   (Requires internet)
 
-By leveraging Natural Language Processing (NLP), it automatically extracts skills and key keywords from uploaded CVs and compares them with a structured job dataset to calculate match scores— making the job search process faster, smarter, and more transparent.
+4. Run the app:
+   python run.py
 
-🎯 Key Features
+5. Open http://127.0.0.1:5000
 
-✅ Resume Upload & Parsing
-Upload your CV (PDF), and SkillMatch will extract keywords and technical skills automatically.
-
-✅ AI-Powered Job Matching
-Compares extracted skills with a predefined job dataset using cosine similarity and keyword scoring.
-
-✅ Instant Results
-Displays top matching jobs ranked by percentage match.
-
-✅ Simple & Clean Interface
-Modern UI built with HTML, CSS, and Bootstrap for a smooth user experience.
-
-✅ Local Privacy
-All processing happens locally — no external data sharing.
-
-⚙️ Tech Stack
-
-| Category | Technologies |
-|-----------|---------------|
-| Frontend | HTML, CSS, Bootstrap |
-| Backend | Python (Flask) |
-| Data Analysis | Pandas, scikit-learn |
-| NLP | spaCy / TF-IDF Vectorizer |
-| Storage | CSV / Local Database |
-| Deployment (Future) | Render / Railway / AWS |
-
-🧩 System Workflow
-
-1. User Uploads CV (PDF)
-2. Text Extracted from Resume
-3. NLP-based Keyword Extraction
-4. Job Dataset Comparison (using TF-IDF / cosine similarity)
-5. Top Job Matches Displayed with Scores
-
-
-
+Notes:
+- Use Register → Login → Upload Resume.
+- Uploaded PDFs are stored in instance/uploads/.
+- To change secret key, set environment variable SKILLMATCH_SECRET.
