@@ -20,7 +20,4 @@
 
 5. Open http://127.0.0.1:5000
 
-Notes:
-- Use Register → Login → Upload Resume.
-- Uploaded PDFs are stored in instance/uploads/.
-- To change secret key, set environment variable SKILLMATCH_SECRET.
+
